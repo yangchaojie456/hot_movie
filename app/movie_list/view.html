@@ -1,0 +1,49 @@
+<!-- 主内容start -->
+        <div class="main" id="home">
+           <!-- 加载动画 -->
+            <div class="spinner" style="width:100%" ng-show="isShow">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+
+          <div class="new_movie">
+            <h2>{{type}}</h2>
+            <div class="row">
+              <div to-top class="col-xs-6 col-sm-3 col-lg-2" ng-repeat="item in data.subjects.slice(0,12)">
+                <div class="thumbnail" brief movieId={{item.id}}>
+                  <a href="#/subject/{{item.id}}"><img ng-src="{{item.images.large}}" height="400" alt="..."></a>
+                  <div class="caption">
+                    <p class="clearfix"><span class="fl">{{item.title}}</span><span class="fr">{{item.rating.average}}</span></p>
+                    <p>类型：<a href="#/search?q={{genre}}" ng-repeat="genre in item.genres"><span class="des">{{genre}}</span></a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div to-top class="col-xs-6 col-sm-3 col-lg-2" ng-repeat="item in data.subjects.slice(12,24)">
+                <div class="thumbnail" brief movieId={{item.id}}>
+                  <a href="#/subject/{{item.id}}"><img class="lazy" lazyload data-original="{{item.images.large}}" height="400" alt="..."></a>
+                  <div class="caption">
+                    <p class="clearfix"><span class="fl">{{item.title}}</span><span class="fr">{{item.rating.average}}</span></p>
+                    <p>类型：<a href="#/search?q={{genre}}" ng-repeat="genre in item.genres"><span class="des">{{genre}}</span></a></p>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- 分页start -->
+          <nav aria-label="...">
+            <ul class="pager">
+              <li><a to-top href="javascript:" ng-click="go(+page-1)">上一页</a></li>
+              <li><a to-top href="javascript:" ng-click="go(+page+1)">下一页</a></li>
+            </ul>
+          </nav>
+          <!-- 分页end -->
+
+
+        </div>
+
+        <!-- 主内容end -->

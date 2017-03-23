@@ -1,0 +1,35 @@
+<div class="movie_detail">
+
+             <!-- 加载动画 -->
+            <div class="spinner" style="width:100%" ng-show="isShow">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+
+            <div class="content clearfix">
+              <div class="fl">
+                <img src="{{data.images.large}}" alt="">
+              </div>
+
+              <div class="detail">
+                <h2>{{data.title}}</h2>
+                <h3>{{data.original_title}}</h3>
+                <ul>
+                  <li><span class="em6">导演：</span><span ng-repeat='item in data.directors'><a href="">{{item.name}}</a></span></li>
+                  <li><span class="em6">演员：</span><span ng-repeat='item in data.casts'><a href="">{{item.name}}</a>{{$last?'':' | '}}</span></li>
+                  <li><span class="em6">国家地区：</span><span ng-repeat='item in data.countries'><a href="">{{item}}</a>{{$last?'':' | '}}</span></li>
+
+                  <li><span class="em6">更多片名：</span><span ng-repeat='item in data.aka'>{{item}}{{$last?'':' | '}}</span></li>
+                  <li>
+                      <h4>剧情</h4>
+                      <p>{{data.summary}}</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+
+
+          </div>

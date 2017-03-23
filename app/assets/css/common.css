@@ -1,0 +1,72 @@
+body {
+	font: 12px/1.5 "Microsoft YaHei";
+	color: #000;
+	background-color: #f3f3f3;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+
+	padding:0 20px;
+}
+
+input, select, textarea {
+	font: 12px/1.5 "Microsoft YaHei";
+	color: #000;
+	vertical-align: middle;
+	outline: none;
+}
+a {
+	color: #000;
+}
+b, i, em {
+	font-weight: normal;
+	font-style: normal;
+}
+img {
+	display: block;
+	border: 0;
+}
+
+.bdr3 {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+
+.clearfix:before,.clearfix:after{
+	content:"";
+	display:table;
+}
+.clearfix:after{
+	clear:both;
+}
+
+.clearfix {
+	*zoom:1;
+}
+.hidden {
+	display: none!important;
+}
+.borderBox {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.wrap {
+	padding: 0 100px;
+	min-width: 980px;
+	_width: 1180px;
+	_margin: 0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.bacc{
+	background-color:#E6E6E6 !important;
+	border-bottom: 1px solid #CFCFCF !important;
+}

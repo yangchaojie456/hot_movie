@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>电影一览</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+</head>
+<body>
+    <div ng-app="movie" ng-controller="searchCtrl">
+
+
+        <!-- top栏start -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#/home_page">
+                  <img class="hidden-xs hidden-sm" src="assets/img/logo.gif" alt="logo" height="62">
+                  <img class="visible-xs visible-sm" src="assets/img/logo-ms.gif" alt="logo" height="62">
+
+              </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+
+                <li><a href="#/home_page">首页</a></li>
+                <li class="dropdown">
+                  <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">导航<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/in_theaters">正在热映</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#/coming_soon">即将上映</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#/top250">top250</a></li>
+
+
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/search?q=爱情">爱情</a></li>
+                    <li><a href="#/search?q=喜剧">喜剧</a></li>
+                    <li><a href="#/search?q=动画">动画</a></li>
+                    <li><a href="#/search?q=剧情">剧情</a></li>
+                    <li><a href="#/search?q=科幻">科幻</a></li>
+                    <li><a href="#/search?q=动作">动作</a></li>
+                    <li><a href="#/search?q=经典">经典</a></li>
+                    <li><a href="#/search?q=悬疑">悬疑</a></li>
+                    <li><a href="#/search?q=青春">青春</a></li>
+                    <li><a href="#/search?q=犯罪">犯罪</a></li>
+                    <li><a href="#/search?q=惊悚">惊悚</a></li>
+                    <li><a href="#/search?q=文艺">文艺</a></li>
+                    <li><a href="#/search?q=搞笑">搞笑</a></li>
+                    <li><a href="#/search?q=纪录片">纪录片</a></li>
+                    <li><a href="#/search?q=励志">励志</a></li>
+                    <li><a href="#/search?q=恐怖">恐怖</a></li>
+                    <li><a href="#/search?q=战争">战争</a></li>
+                    <li><a href="#/search?q=短片">短片</a></li>
+                    <li><a href="#/search?q=黑色幽默">黑色幽默</a></li>
+                    <li><a href="#/search?q=魔幻">魔幻</a></li>
+                    <li><a href="#/search?q=传记">传记</a></li>
+                    <li><a href="#/search?q=情色">情色</a></li>
+                    <li><a href="#/search?q=感人">感人</a></li>
+                    <li><a href="#/search?q=暴力">暴力</a></li>
+                    <li><a href="#/search?q=家庭">家庭</a></li>
+                    <li><a href="#/search?q=动画短片">动画短片</a></li>
+                    <li><a href="#/search?q=音乐">音乐</a></li>
+                    <li><a href="#/search?q=童年">童年</a></li>
+                    <li><a href="#/search?q=浪漫">浪漫</a></li>
+                    <li><a href="#/search?q=黑帮">黑帮</a></li>
+                    <li><a href="#/search?q=女性">女性</a></li>
+                    <li><a href="#/search?q=同志">同志</a></li>
+                    <li><a href="#/search?q=史诗">史诗</a></li>
+                    <li><a href="#/search?q=烂片">烂片</a></li>
+                    <li><a href="#/search?q=童话">童话</a></li>
+                    <li><a href="#/search?q=西部">西部</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <form  class="navbar-form navbar-right" ng-submit="submit()" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="电影/演员/类型/导演" ng-model="search">
+                </div>
+                <button ng-click="submit()" class="btn btn-default">搜索</button>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <!-- top栏end -->
+
+        <!-- 展示部分 -->
+        <div ng-view>
+
+
+
+        </div>
+
+
+
+        <div class="footer">
+          <div class="support visible-lg">
+          <!-- 帮助中心 -->
+            <div class="center dib">
+              <div class="img">
+
+              </div>
+              <dl>
+                <dt>帮助中心</dt>
+                <dd><a href="#">新手上路</a></dd>
+                <dd><a href="#">视频资源</a></dd>
+              </dl>
+            </div>
+            <span></span>
+            <!-- 在线反馈 -->
+            <div class="feedback dib">
+              <div class="img">
+
+              </div>
+              <dl>
+                <dt>在线反馈</dt>
+                <dd><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=547154073&site=qq&menu=yes">QQ咨询</a></dd>
+              </dl>
+            </div>
+            <span></span>
+            <!-- 客服电话 -->
+            <div class="tel dib">
+              <div class="img">
+
+              </div>
+              <dl>
+                <dt>客服电话</dt>
+                <dd class="f18">400-066-9999</dd>
+                <dd>9:00-22:00</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="copyright">
+            <p><a href="#">关于本站</a>-<a href="#">网站帮助</a>-<a href="#">友情链接</a>-<a href="#">联系我们</a></p>
+            <p>Copyright @ 2017 电影一览-www.dianyingyilan.com. All Rights for you</p>
+          </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- script -->
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="services/http_jsonp.js"></script>
+    <script src="home_page/home_page.js"></script>
+    <script src="movie_list/movie_list.js"></script>
+    <script src="movie_detail/movie_detail.js"></script>
+    <script src="directive/lazy.js"></script>
+    <script src="directive/brief.js"></script>
+    <script src="directive/toTop.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
+</body>
+</html>
